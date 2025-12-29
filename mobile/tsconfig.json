@@ -1,0 +1,22 @@
+{
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "nativewind-env.d.ts"
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@/components/*": ["src/components/*"],
+      "@/lib/*": ["src/lib/*"],
+      "@/hooks": ["src/lib/hooks"],
+      "@/store": ["src/store"],
+      "@/services": ["src/services"],
+      "@/types": ["src/lib/types"],
+      "@/config": ["src/config"],
+      "@/assets/*": ["src/assets/*"]
+    }
+  },
+  "extends": "expo/tsconfig.base"
+}

@@ -4,6 +4,8 @@
 
 [![Node.js](https://img.shields.io/badge/Node.js-18+-green.svg)](https://nodejs.org/)
 [![React Native](https://img.shields.io/badge/React%20Native-0.72+-blue.svg)](https://reactnative.dev/)
+[![pnpm](https://img.shields.io/badge/pnpm-10+-red.svg)](https://pnpm.io/)
+[![Turbo](https://img.shields.io/badge/Turbo-2+-orange.svg)](https://turbo.build/)
 
 An IoT-based smart home automation system that enables remote monitoring and control of household utilities through a mobile application. Built with ESP32, Express.js, Socket.IO, and React Native for real-time, cross-platform home automation.
 
@@ -29,7 +31,8 @@ HomeLink uses a three-tier architecture:
 
 - **Embedded**: ESP32, Espruino, GPIO
 - **Backend**: Node.js, Express.js, Socket.IO, MongoDB, Mongoose
-- **Mobile**: React Native, Socket.IO client
+- **Mobile**: React Native, Socket.IO client, NativeWind, Expo Router
+- **Build Tools**: pnpm, Turbo (monorepo management)
 - **Communication**: WebSocket via Socket.IO
 
 ## Installation
@@ -40,38 +43,38 @@ HomeLink uses a three-tier architecture:
 - MongoDB 6.0+
 - ESP32 DevKit
 - React Native development environment
+- pnpm 10+
 
-### Backend Setup
+### Monorepo Setup
 
 ```bash
 # Clone the repository
 git clone https://github.com/yourusername/homelink.git
-cd homelink/backend
+cd homelink
 
-# Install dependencies
-npm install
+# Install all dependencies using pnpm
+pnpm install
+```
 
+### Backend Setup
+
+```bash
 # Set up environment variables
-cp .env.example .env
-# Edit .env with your MongoDB connection and other settings
+cp backend/.env.example backend/.env
+# Edit backend/.env with your MongoDB connection and other settings
 
-# Start the server
-npm start
+# Start the backend server
+pnpm --filter backend dev
 ```
 
 ### Mobile App Setup
 
 ```bash
-cd homelink/mobile
+# For iOS (if needed)
+cd mobile && cd ios && pod install && cd ../..
 
-# Install dependencies
-npm install
-
-# For iOS
-cd ios && pod install && cd ..
-
-# Run on device/emulator
-npm run android  # or npm run ios
+# Run the mobile app
+pnpm --filter mobile dev
 ```
 
 ### ESP32 Firmware
@@ -84,6 +87,25 @@ Flash Espruino firmware to ESP32 and upload the firmware code from `esp32/` dire
 2. **Configure Wi-Fi**: Update ESP32 code with your network credentials
 3. **Register Devices**: Use the mobile app to register ESP32 devices with the server
 4. **Control Devices**: Toggle switches, monitor door status, and view activity logs
+
+### Development Commands
+
+```bash
+# Run all development servers
+pnpm dev
+
+# Build all packages
+pnpm build
+
+# Run tests
+pnpm test
+
+# Lint code
+pnpm lint
+
+# Clean build artifacts
+pnpm clean
+```
 
 ## Hardware Requirements
 
@@ -111,20 +133,31 @@ Flash Espruino firmware to ESP32 and upload the firmware code from `esp32/` dire
 ```
 homelink/
 ├── backend/          # Express.js server
+│   ├── package.json
+│   └── src/          # Backend source code
 ├── mobile/           # React Native app
+│   ├── package.json
+│   ├── src/
+│   │   └── app/      # Expo Router pages
+│   └── assets/       # App assets
 ├── esp32/            # ESP32 firmware
-├── test.ts           # Test files
+├── package.json      # Root monorepo config
+├── pnpm-workspace.yaml
+├── turbo.json        # Turbo configuration
 └── README.md
 ```
 
 ### Testing
 
 ```bash
-# Run backend tests
-cd backend && npm test
+# Run tests for all packages
+pnpm test
 
-# Run mobile tests
-cd mobile && npm test
+# Run backend tests only
+pnpm --filter backend test
+
+# Run mobile tests only
+pnpm --filter mobile test
 ```
 
 ## Contributing

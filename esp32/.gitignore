@@ -1,0 +1,58 @@
+# Arduino IDE
+*.ino.cpp
+*.ino.hpp
+
+# ESP32 / ESP8266
+.vscode/
+.pio/
+.pioenvs/
+.piolibdeps/
+.pio/build/
+.pio/libdeps/
+.pio/platforms/
+.pio/packages/
+
+# PlatformIO
+.pio
+.pioenvs
+.piolibdeps
+.pio/build
+.pio/libdeps
+.pio/platforms
+.pio/packages
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editor files
+.idea/
+*.swp
+*.swo
+*~
+
+# Build artifacts
+build/
+dist/
+
+# Firmware binaries
+*.bin
+*.elf
+*.hex
+*.map
+
+# Libraries
+libraries/
+
+# Configuration files
+config.h
+secrets.h
