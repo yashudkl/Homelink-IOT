@@ -11,29 +11,23 @@ An IoT-based smart home automation system that enables remote monitoring and con
 
 ## Features
 
-- **Remote Control**: Control lights, fans, water pumps, and electronic door locks from your smartphone
+- **Remote Control**: Control lights, fans and electronic door locks from your smartphone
 - **Real-time Monitoring**: Live status updates and door position monitoring with sensors
 - **Multi-device Support**: Manage multiple rooms and devices simultaneously
-- **Cross-platform**: Works on both Android and iOS devices
-- **Self-hosted**: No cloud dependency - run on your own server
 - **Event Logging**: Track all activities and device states
-- **Low Latency**: Sub-500ms response time using WebSocket technology
+
 
 ## Architecture
 
 HomeLink uses a three-tier architecture:
 
-- **Hardware Layer**: ESP32 microcontroller with Espruino firmware for GPIO control
-- **Backend Layer**: Express.js server with Socket.IO for real-time communication and MongoDB for data persistence
+- **Hardware Layer**: ESP32 WROOM (USB-C), DHT-22 module, Relay Module (4- or 8-channel).
+- **Backend Layer**: C++ (Arduino) , Node.js (Express.js (REST API).
+MQTT.js (device messaging)
 - **Mobile Layer**: React Native app for cross-platform user interface
 
-## Tech Stack
+## Tech Stack 
 
-- **Embedded**: ESP32, Espruino, GPIO
-- **Backend**: Node.js, Express.js, Socket.IO, MongoDB, Mongoose
-- **Mobile**: React Native, Socket.IO client, NativeWind, Expo Router
-- **Build Tools**: pnpm, Turbo (monorepo management)
-- **Communication**: WebSocket via Socket.IO
 
 ## Installation
 
