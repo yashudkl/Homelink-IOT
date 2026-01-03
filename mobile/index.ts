@@ -1,4 +1,4 @@
 import { registerRootComponent } from 'expo';
-import RootLayout from './src/app/_layout';
+import RootLayout from './src/RootLayout';
 
 registerRootComponent(RootLayout);

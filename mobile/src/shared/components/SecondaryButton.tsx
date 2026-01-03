@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity, Text } from 'react-native';
+import { Pressable, Text } from 'react-native';
 
 interface SecondaryButtonProps {
   title: string;
@@ -9,12 +9,11 @@ interface SecondaryButtonProps {
 
 export const SecondaryButton = ({ title, onPress, className }: SecondaryButtonProps) => {
   return (
-    <TouchableOpacity
+    <Pressable
       className={`py-4 px-8 rounded-xl items-center justify-center border border-gray-300 bg-light ${className ?? ''}`}
       onPress={onPress}
-      activeOpacity={0.7}
     >
-      <Text className="text-textPrimary text-lg font-medium">{title}</Text>
-    </TouchableOpacity>
+      <Text className="text-textPrimary text-md font-medium">{title}</Text>
+    </Pressable>
   );
 };
