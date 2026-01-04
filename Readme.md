@@ -17,9 +17,9 @@ An IoT-based smart home automation system that enables remote monitoring and con
 
 ## Mobile APP UI
 
-<img width="275" height="500" alt="image" src="https://github.com/user-attachments/assets/7bbe527c-9f92-4080-8111-cb126b52a9b1" />
-<img width="275" height="500" alt="image" src="https://github.com/user-attachments/assets/840611e9-eebb-48e8-94d4-dcfb35b44576" />
-<img width="275" height="500" alt="image" src="https://github.com/user-attachments/assets/391a363f-43ae-47ea-9e06-60ff0998277f" />
+<img width="240" height="450" alt="image" src="https://github.com/user-attachments/assets/7bbe527c-9f92-4080-8111-cb126b52a9b1" />
+<img width="240" height="450" alt="image" src="https://github.com/user-attachments/assets/840611e9-eebb-48e8-94d4-dcfb35b44576" />
+<img width="240" height="450" alt="image" src="https://github.com/user-attachments/assets/391a363f-43ae-47ea-9e06-60ff0998277f" />
 
 
 
