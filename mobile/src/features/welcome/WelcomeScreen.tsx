@@ -1,22 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useNavigation } from '@react-navigation/native';
 import { Logo, WelcomeTitle, ButtonGroup, SignUpLink } from './components';
-import { AuthBottomSheet } from '../auth/components/AuthBottomSheet';
 
 export default function WelcomeScreen() {
-  const [isAuthSheetOpen, setIsAuthSheetOpen] = useState(false);
+  const navigation = useNavigation<any>();
 
   const handleGetStarted = () => {
-    setIsAuthSheetOpen(true);
+    navigation.navigate('AuthEmail');
   };
 
   const handleLogin = () => {
-    setIsAuthSheetOpen(true);
+    navigation.navigate('AuthEmail');
   };
 
   const handleSignUp = () => {
-    setIsAuthSheetOpen(true);
+    navigation.navigate('AuthEmail');
   };
 
   return (
@@ -35,11 +35,6 @@ export default function WelcomeScreen() {
           <SignUpLink onSignUp={handleSignUp} />
         </View>
       </View>
-
-      <AuthBottomSheet
-        visible={isAuthSheetOpen}
-        onClose={() => setIsAuthSheetOpen(false)}
-      />
     </SafeAreaView>
   );
 }
