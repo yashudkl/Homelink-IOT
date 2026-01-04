@@ -1,3 +1,5 @@
 packages:
   - 'backend'
   - 'mobile'
+  - 'shared'
+  - 'esp32'
