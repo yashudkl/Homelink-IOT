@@ -28,7 +28,7 @@ An IoT-based smart home automation system that enables remote monitoring and con
 HomeLink uses a three-tier architecture:
 
 - **Hardware Layer**: ESP32-D0WD-V3 DevKit board, DHT-22 module, Relay Modules , Resistors , LED lights.
-- **Backend Layer**: C++ (Arduino IDE) , Node.js (Express.js (REST API).
+- **Backend Layer**: C++ (Arduino IDE) , Nest.js , Websocket
 Socket.IO
 - **Frontend Layer**: React Native app for cross-platform user interface
 
